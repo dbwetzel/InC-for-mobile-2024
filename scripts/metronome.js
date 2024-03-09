@@ -74,7 +74,7 @@ function startTransport(){
   switch (Tone.Transport.state) {
     case "stopped":
       Tone.Transport.bpm.value = bpm;
-      Tone.Transport.start();
+      Tone.Transport.start("0.1");
       console.log("transport " + Tone.Transport.state);
       transport.style.background = '#4caf50';
       transport.innerHTML = "Stop";
@@ -88,7 +88,7 @@ function startTransport(){
       pB.classList.remove('active');
       break;
     default:
-      Tone  .Transport.start();
+      Tone.Transport.start("0.1");
   }
 }
 

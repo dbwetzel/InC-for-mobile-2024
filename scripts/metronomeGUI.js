@@ -76,15 +76,15 @@ const metroGUI = p => {
         p.background(200);
         p.textAlign(p.CENTER);
         p.fill(0);
-        // p.text("'phase sync' tempo", 90, 60);
+        p.text("'phase sync' (temporarily adjust tempo)", p.width/2, 72);
         p.textAlign(p.CENTER);
         let t = Math.trunc(Tone.Transport.bpm.value);
         // let t = Math.trunc(bpm); //bpm defined globally in metronome.js
         p.text(t + " bpm", p.width/2, 20);
         p.textAlign(p.LEFT);
-        p.text("<-slower", p.width/2 - 55, 60);
+        p.text("<-slower", p.width/2 - 55, 55);
         p.textAlign(p.RIGHT);
-        p.text("faster->", p.width/2 + 55, 60);
+        p.text("faster->", p.width/2 + 60, 55);
         //ostSynth = synthLibrary[selectSynth.selected()];
         //tap.display();
         //click.display();
