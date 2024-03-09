@@ -3,7 +3,7 @@
 * Also creates a transport start/stop button
 */
 
-Tone.context.lookAhead = 0.25;
+Tone.context.lookAhead = 0.5;
 console.log("lookAhead: " + Tone.context.lookAhead);
 var bpm = 138; // default tempo
 
