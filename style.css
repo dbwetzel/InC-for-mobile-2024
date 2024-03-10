@@ -2,7 +2,7 @@
   position: relative;
   margin: 0 auto;
   display: block;
-  width: 380px;
+  width: 320px;
   scroll-snap-align: start;
 }
 
@@ -12,17 +12,18 @@
   -webkit-overflow-scrolling: touch;
   position: relative;
   scroll-snap-type: y mandatory;
+  margin: auto;
 }
 
 .sync {
-  width: 350px;
+  width: 320px;
   position: relative;
   margin: auto;
 }
 .metronome {
-  align-content: center;
   position: relative;
-  align-items: center;
+  margin: auto;
+  width:380px;
 }
 .syncButton {
   height: 50px;
@@ -76,6 +77,7 @@ body{
   display: grid;
   justify-content: center;
   padding: auto;
+  margin: auto;
 }
 
 .header {
@@ -101,6 +103,9 @@ body{
 .player {
   display: grid;
   justify-content: center;
+  background: #eaeaea;
+  width: 96%;
+  margin: auto;
 }
 
 .upArrow {
@@ -312,6 +317,8 @@ body{
   background-color: #eeeeee;
   text-align: center;
   position: relative;  
+  width:95%;
+  margin: auto;
 
 }
 
