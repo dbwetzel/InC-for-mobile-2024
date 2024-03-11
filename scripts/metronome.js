@@ -2,9 +2,7 @@
 * This script sets up a basic metronome click with tempo and sync adjustment
 * Also creates a transport start/stop button
 */
-
-Tone.context.lookAhead = 0.5;
-console.log("lookAhead: " + Tone.context.lookAhead);
+//Tone.context.latencyHint = "balanced";
 var bpm = 138; // default tempo
 
 console.log("default tempo: " + bpm + " bpm");
@@ -12,7 +10,7 @@ console.log("default tempo: " + bpm + " bpm");
 Tone.Transport.bpm.value = bpm;
 
 //const ostSynth = new Tone.PolySynth(Tone.Synth).toDestination();
-var ostSynth = synthLibrary[1].synth; // pull from synth library
+var ostSynth = synthLibrary[0].synth; // pull from synth library
 const ostLoop = new Tone.Part(function (time, value){
   ostSynth.triggerAttackRelease(value.note, "16n", time);
 }, [{"time" : 0, "note" : ["C3", "C5"]}, 
@@ -66,13 +64,18 @@ transport.id = "transport";
 transport.addEventListener('click', () => {
   startTransport();
 });
+/* moved to setContext.js
 let pB = document.getElementById("powerButton");
-pB.addEventListener('click', () => {
+pB.addEventListener('click', async () => {
+  await Tone.start();
+  console.log("audio is ready");
   startTransport();
 });
+*/
 
 function startTransport(){
   //make this function accessible from other buttons
+  //Tone.start(); 
   switch (Tone.Transport.state) {
     case "stopped":
       Tone.Transport.bpm.value = bpm;

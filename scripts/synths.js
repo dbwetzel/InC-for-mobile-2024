@@ -20,7 +20,7 @@ var synthLibrary = [
     name: "Synth 1",
     type: "Synth",
     settings: {
-      "volume": 0,
+      "volume": 0, 
       "detune": 0,
       "portamento": 0.05,
       "envelope": {
@@ -49,12 +49,12 @@ var synthLibrary = [
     polyphonic: true
   },
   {
-    name: "Synth 2",
+    name: "Squarinet",
     type: "Synth",
     settings:{
-      "volume": 0,
+      "volume": -6,
       "detune": 0,
-      "portamento": 0.05,
+      "portamento": 0,
       "envelope": {
         "attack": 0.05,
         "attackCurve": "exponential",
@@ -65,12 +65,18 @@ var synthLibrary = [
         "sustain": 0.2
       },
       "oscillator": {
-        "partialCount": 0,
-        "partials": [],
+        "partialCount": 7,
+        "partials": [
+          1.2732395447351628,
+          0,
+          0.4244131815783876,
+          0,
+          0.25464790894703254,
+          0,
+          0.18189136353359467
+        ],
         "phase": 0,
-        "type": "amtriangle",
-        "harmonicity": 0.5,
-        "modulationType": "sine"
+        "type": "square7"
       }
     },
     polyphonic: true
@@ -141,7 +147,7 @@ var synthLibrary = [
       }
     },
     polyphonic: true
-  },
+  }, 
   {
     name : "New Wave", // Chris Diaz 2024 (COMP 122)
     type : "Synth",
@@ -154,7 +160,7 @@ var synthLibrary = [
         "attackCurve": "ripple",
         "decay": 0.5,
         "decayCurve": "linear",
-        "release": 1.5,
+        "release": 1,
         "releaseCurve": "ripple",
         "sustain": 0.5
       },
@@ -167,7 +173,7 @@ var synthLibrary = [
         ],
         "phase": 0,
         "type": "fatcustom",
-        "count": 4,
+        "count": 3,
         "spread": 20
       }
     },
@@ -234,7 +240,7 @@ synthMenu.addEventListener("change", (e)=>{
   let s = synthLibrary[e.target.value].synth;
   console.log("Synth " + e.target.value)
   for(let i = 0; i < sketches.length; i++){
-    sketches[i].setSynth(s);
+    sketches[i].setSynth(s); // set all the synths
   }
 })
 
